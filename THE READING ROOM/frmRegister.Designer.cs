@@ -1,4 +1,4 @@
-﻿namespace THE_READING_ROOM
+namespace THE_READING_ROOM
 {
     partial class frmRegister
     {
@@ -174,7 +174,7 @@
             lblSub.Name = "lblSub";
             lblSub.Size = new Size(334, 17);
             lblSub.TabIndex = 2;
-            lblSub.Text = "Join the team. An administrator approves new accounts.";
+            lblSub.Text = "Join the team. New accounts begin with cashier access.";
             // 
             // lblTitle
             // 
@@ -306,7 +306,7 @@
             cboRole.FlatStyle = FlatStyle.Flat;
             cboRole.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboRole.FormattingEnabled = true;
-            cboRole.Items.AddRange(new object[] { "Cashier", "Admin" });
+            cboRole.Items.Add("Cashier");
             cboRole.Location = new Point(37, 270);
             cboRole.Name = "cboRole";
             cboRole.Size = new Size(360, 28);

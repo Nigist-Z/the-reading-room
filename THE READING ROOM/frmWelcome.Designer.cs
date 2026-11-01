@@ -1,4 +1,4 @@
-﻿namespace THE_READING_ROOM
+namespace THE_READING_ROOM
 {
     partial class frmWelcome
     {
@@ -187,7 +187,7 @@
             lblNote.Name = "lblNote";
             lblNote.Size = new Size(415, 17);
             lblNote.TabIndex = 7;
-            lblNote.Text = "For shop staff. New accounts are approved by your administrator.";
+            lblNote.Text = "For shop staff. New accounts begin with cashier access and are kept in memory.";
             // 
             // lblEyebrow
             // 
@@ -205,7 +205,7 @@
             // 
             lblHeadline.Font = new Font("Georgia", 39.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lblHeadline.ForeColor = Color.FromArgb(75, 56, 42);
-            lblHeadline.Location = new Point(31, 57);
+            lblHeadline.Location = new Point(40, 57);
             lblHeadline.Name = "lblHeadline";
             lblHeadline.Size = new Size(480, 150);
             lblHeadline.TabIndex = 3;

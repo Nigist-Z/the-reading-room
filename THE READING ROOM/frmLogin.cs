@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,11 +38,7 @@ namespace THE_READING_ROOM
                 return;
             }
 
-            // Temporary accounts. We will replace these later.
-            bool isAdmin = user == "admin" && pass == "admin123";
-            bool isCashier = user == "cashier" && pass == "cashier123";
-
-            if (!isAdmin && !isCashier)
+            if (!Session.TryLogin(user, pass))
             {
                 ShowError("The username or password is incorrect. Try again.");
                 txtPassword.Clear();
@@ -51,8 +47,6 @@ namespace THE_READING_ROOM
             }
 
             lblError.Visible = false;
-            Session.UserName = user;
-            Session.Role = isAdmin ? "Admin" : "Cashier";
             DialogResult = DialogResult.OK;   // closes the login form and tells the welcome page it workeds
         }
 

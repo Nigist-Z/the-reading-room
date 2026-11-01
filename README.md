@@ -1,105 +1,30 @@
+# The Reading Room - Phase 1
 
-# Bookstore Management System
+This is the Windows Forms desktop phase of the bookstore management project. It uses in-memory data only. Books, categories, sales, registered cashier accounts, and settings reset when the application closes. Database/API and web work belong to later phases and are not included here.
 
-A desktop-based **Bookstore Management System** developed using C# and Windows Forms as a group project for the Event Driven Programming course at Debre Birhan University.
+## Open and run
 
-## Group Members | Contributors
+1. Open `THE READING ROOM.slnx` in Visual Studio 2026.
+2. Select the `THE READING ROOM` project as the startup project if needed.
+3. Build and run on Windows with the .NET 10 SDK and .NET desktop development workload installed.
 
-1. Nigist Zewdu 
-2. Estifanos Shambel 
-3. Muluken Kassaw 
+## Demo sign-in
 
----
+- Administrator: `admin` / `admin123`
+- Cashier: `cashier` / `cashier123`
 
-## Project Description
+New accounts are Cashier accounts and remain in memory until the application closes.
 
-The Bookstore Management System is a desktop application designed to simplify and organize the daily operations of a bookstore.
+## Phase-one features
 
-The system provides an easy-to-use graphical interface that allows authorized bookstore staff to manage book records, organize categories, search for books, monitor inventory, and process sales.
+- Dashboard with live inventory, monthly sales, low-stock, and activity summaries
+- Book catalogue with add, edit, delete, search, category and stock filters, and helpful empty states
+- Category management with duplicate-name checks and a safeguard against deleting categories that still have books
+- Multi-book checkout with stock validation, optional walk-in customer, basket management, and a receipt-style confirmation
+- Reports for all books, sales in a selected date range, and low-stock books; sales can be exported to CSV
+- Settings for the low-stock level, loading sample data, and clearing in-memory records
+- Event-driven navigation, validation feedback, menu actions, and status-bar updates
+- Bookstore photography on the welcome, login, registration, and main navigation screens
+- A small, smooth hover animation on the dashboard bookshelf illustration
 
-The application is developed using **C# and Windows Forms in Visual Studio**. It demonstrates event-driven programming concepts by responding to user interactions such as button clicks, text changes, selections, and other form events.
-
-The main purpose of this project is to reduce manual record-keeping, improve inventory accuracy, simplify sales processing, and make bookstore management more efficient.
-
-## Project Scope
-
-This project focuses on the core operations of a small or medium-sized bookstore. It is designed for desktop use by bookstore staff or administrators.
-
-The initial version does not include online ordering, delivery tracking, online payment, or a customer-facing website.
-
-
-## Project Objectives
-
-- Organize and maintain book information.
-- Search for books quickly using different criteria.
-- Monitor available stock and identify low-stock books.
-- Record sales and automatically update inventory.
-- Reduce data-entry errors through input validation.
-- Apply event-driven programming concepts using Windows Forms.
-
-## Main Features
-
-### 1. Book Management
-- Add new books.
-- View all registered books.
-- Update existing book information.
-- Delete book records.
-- Manage book details such as title, author, ISBN, category, price, and quantity.
-
-### 2. Category Management
-- Organize books into different categories.
-- Assign categories to books.
-- Select categories when adding or updating books.
-
-### 3. Book Search
-- Search books by title.
-- Search by author.
-- Search by ISBN or book code.
-- Filter books by category.
-
-### 4. Inventory Management
-- Track available book quantities.
-- Automatically update stock after successful sales.
-- Identify books with low stock.
-- Prevent sales that exceed available quantities.
-
-### 5. Sales Management
-- Select one or more books for a sale.
-- Specify the quantity of each selected book.
-- Calculate individual item totals.
-- Calculate the overall sales amount.
-- Update inventory after completing a sale.
-
-### 6. Reports and Summaries
-- View registered books.
-- View low-stock books.
-- Review basic sales records.
-- Monitor bookstore activities.
-
-### 7. Input Validation and User Feedback
-- Validate required fields.
-- Prevent invalid prices and quantities.
-- Display success, warning, and error messages.
-- Ask for confirmation before deleting records.
-
-## Technologies Used
-
-| Technology | Purpose |
-|---|---|
-| C# | Application programming language |
-| Windows Forms (WinForms) | Desktop graphical user interface |
-| Visual Studio | Development environment |
-
-
-## User Interface Components
-
-The application uses standard Windows Forms controls, including:
-
-- **TextBox:** Entering book information.
-- **Button:** Performing operations such as adding, updating, and deleting books.
-- **ComboBox:** Selecting book categories.
-- **DataGridView:** Displaying books and sales information.
-- **SplitContainer:** Organizing the application interface.
-- **MessageBox:** Displaying notifications and confirmations.
-
-
+The low-stock report uses a Windows Forms `ListView`, as required by the instructor's core desktop requirements. The shared bookshelf PictureBox and dashboard animation timer are exposed in the Visual Studio Designer for visual editing.

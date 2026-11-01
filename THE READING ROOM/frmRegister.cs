@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace THE_READING_ROOM;
@@ -8,7 +8,9 @@ public partial class frmRegister : Form
     public frmRegister()
     {
         InitializeComponent();
-        cboRole.SelectedIndex = 0;   // starts on Cashier
+        cboRole.Items.Clear();
+        cboRole.Items.Add("Cashier");
+        cboRole.SelectedIndex = 0;
     }
 
     private void btnCreate_Click(object sender, EventArgs e)
@@ -48,9 +50,15 @@ public partial class frmRegister : Form
             return;
         }
 
-        // Temporary: the account is not saved yet. We will store it later.
-        MessageBox.Show("Account created for " + fullName + " as " + cboRole.Text +
-            ".\nAn administrator will approve it soon.", "Registration complete");
+        if (!Session.RegisterCashier(username, pass))
+        {
+            ShowError("That username is already in use. Choose another one.", txtUsername);
+            return;
+        }
+
+        MessageBox.Show("Cashier account created for " + fullName +
+            ". You can sign in now. Accounts are kept in memory until the app closes.",
+            "Registration complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
         Close();
     }
 

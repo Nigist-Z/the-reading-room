@@ -81,9 +81,6 @@ namespace THE_READING_ROOM
             }
             Show();               // back to the welcome page
         }
-        {
-            OpenForm(new frmLogin());
-        }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
